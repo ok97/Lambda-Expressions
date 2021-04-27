@@ -16,6 +16,7 @@ namespace Lambda_Expressions
             // RetriveRecordAge13to18(list);
             // RetriveAverageAgeRecord(list);
             // RecordNamePersonPresentOrNot(list);
+            //SkipRecordAgelessthan60(list);
            //  RemoveSpecificName(list);
             Console.ReadLine();
         }
@@ -101,6 +102,18 @@ namespace Lambda_Expressions
             }
         }
 
+        public static void SkipRecordAgelessthan60(List<Person> list) //Create SkipRecordAgelessthan60 method
+        {      /* UC6:- Person Data Management 
+                        - Skip record from the list for age is less than 60.
+                */
+
+            var skip60 = list.FindAll(x=>x.Age>60); //Using lambda Expression find list record Age is >60 
+            foreach (var List in skip60)  //iterate list
+            {
+                Console.WriteLine($"SNN:- {List.SNN} Age:- {List.Age} Name:- {List.Name} Address:- {List.Address}"); //Print Record
+            }
+
+        }
         
 
 
