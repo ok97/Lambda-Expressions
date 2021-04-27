@@ -41,7 +41,19 @@ namespace Lambda_Expressions
 
 
         }
-      
+        public static void RetriveTop2Record(List<Person> list) //create Retrive Method 
+        {  /* UC2:- Person Data Management
+                    - Retrieve top 2 records from the list for age is less than 60
+            */
+            Console.WriteLine("\n\n");
+            var Result = list.FindAll(x => x.Age < 60).OrderBy(x => x.Age).Take(2); //using Lambda Expression find age is less than and print top 2 Record
+            foreach (var List in Result) //iterate list
+            {
+                Console.WriteLine($"SNN:- {List.SNN} Age:- {List.Age} Name:- {List.Name} Address:- {List.Address}"); //Print Top 2 Record
+            }
+        }
+
+        
 
 
     }
