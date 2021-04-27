@@ -101,43 +101,7 @@ namespace Lambda_Expressions
             }
         }
 
-        public static void SkipRecordAgelessthan60(List<Person> list) //Create SkipRecordAgelessthan60 method
-        {      /* UC6:- Person Data Management 
-                        - Skip record from the list for age is less than 60.
-                */
-
-            var skip60 = list.FindAll(x=>x.Age>60); //Using lambda Expression find list record Age is >60 
-            foreach (var List in skip60)  //iterate list
-            {
-                Console.WriteLine($"SNN:- {List.SNN} Age:- {List.Age} Name:- {List.Name} Address:- {List.Address}"); //Print Record
-            }
-
-        }
-        public static void RemoveSpecificName(List<Person> list) //Create SkipRecordAgelessthan60 method
-        {  /* UC7:- Person Data Management.
-                    - Remove specific name from the .list
-            */
-            Console.WriteLine("\n\n");
-            Console.WriteLine("Enter a Name:-"); //take input from user
-            string name = Console.ReadLine(); //read input and store name
-            var search = list.Where(x => x.Name.Equals(name)).FirstOrDefault();//FirstOrDefault is use to dont run any exception //Using lambda Expression search name using equal method
-            if (search != null) //name is present go if block
-            {
-                Console.WriteLine($"{name} is Present in List"); //print
-
-                list.Remove(search); //Delete name of Data in list
-                Console.WriteLine($"{name} Delete Successfully in List"); //print
-               
-                foreach (Person List in list) //iterate list
-                {
-                    Console.WriteLine($"SSN:- {List.SNN} Age:- {List.Age} Name:- {List.Name} Address:- {List.Address} "); //Print Record of the list
-                }
-            }
-            else
-            {
-                Console.WriteLine($"{name} Record Not Found in List"); //print
-            }
-        }
+        
 
 
     }
